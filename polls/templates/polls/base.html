@@ -1,0 +1,29 @@
+{% load staticfiles %}
+
+<html>
+<head>
+<title>Pollr - Make Your Choice</title>
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'polls/css/style.css' %}" />
+{% endblock %}
+
+{% block js %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="{% static 'polls/js/base.js' %}"></script>
+<script src="{% static 'polls/js/polls.js' %}"></script>
+{% endblock %}
+
+</head>
+<body>
+
+
+{% block header %}
+<header>
+<div class="header-corpname"><a href="/">POLLR</a></div>
+<a href="{% url 'polls:create' %}">Create</a>
+</header>
+{% endblock %}
+
+{% block main %}
+{% endblock %}

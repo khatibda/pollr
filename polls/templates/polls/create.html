@@ -1,0 +1,36 @@
+{% extends "polls/base.html" %}
+
+{% block main %}
+<h1>Create Poll</h1>
+
+
+<form action="{% url 'polls:create' %}" method="post">
+{% csrf_token %} {# security for internal posting #}
+
+<div class="inputField">
+<label>Question Title</label>
+<input type="text" name="title" placeholder="Do you love me?" />
+</div>
+
+<div class="inputField">
+<label>Choice 1</label>
+<input type="text" name="choice1" placeholder="Yes" />
+</div>
+
+<div class="inputField">
+<label>Choice 2</label>
+<input type="text" name="choice2" placeholder="No" />
+</div>
+
+<div class="inputField">
+<label>Choice 3</label>
+<input type="text" name="choice3" placeholder="Maybe" />
+</div>
+
+<div class="inputField">
+<input type="submit" value="Save" />
+</div>
+
+</form>
+
+{% endblock %}
